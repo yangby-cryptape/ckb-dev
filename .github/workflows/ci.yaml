@@ -137,3 +137,7 @@ jobs:
         with:
           draft: true
           files: ${{ steps.package.outputs.file_path }}
+      - uses: katyo/publish-crates@v1
+        with:
+          registry-token: ${{ secrets.CARGO_REGISTRY_TOKEN }}
+          dry-run: true
