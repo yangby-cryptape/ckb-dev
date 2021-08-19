@@ -11,4 +11,27 @@ license = "MIT"
 readme = "README.md"
 include = ["Cargo.lock", "src/**/*.rs", "README.md", "LICENSE"]
 
+[[bin]]
+name = "ckbdev"
+path = "src/ckbdev.rs"
+
 [dependencies]
+log = "0.4.14"
+env_logger = "0.9.0"
+thiserror = "1.0.26"
+anyhow = "1.0.43"
+rust-ini = "0.17.0"
+url = "2.2.2"
+clap = { version = "2.33.3", features = ["yaml"]  }
+chrono = "0.4.19"
+ckb-jsonrpc-types = "0.43.2"
+jsonrpc-core = "18.0.0"
+reqwest = { version = "0.11.4", features = ["blocking", "json"]  }
+serde = "1.0.127"
+serde_json = "1.0.66"
+toml = "0.5.8"
+qiniu-upload = "0.1.1"
+walkdir = "2.3.2"
+tempfile = "3.2.0"
+fs_extra = "1.2.0"
+regex = "1.5.4"

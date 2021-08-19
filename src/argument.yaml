@@ -1,0 +1,50 @@
+name: CKB Dev Tool
+about: A CKB Dev Tool.
+settings:
+  - SubcommandRequiredElseHelp
+subcommands:
+  - l1:
+      about: Security level 1 commands.
+      settings:
+        - SubcommandRequiredElseHelp
+      subcommands:
+        - start:
+            about: Start CKB service.
+        - stop:
+            about: Stop CKB service.
+        - restart:
+            about: Restart CKB service.
+        - status:
+            about: Print the status of CKB service.
+        - reset-data:
+            about: Call `ckb reset-data`.
+            args:
+              - peer-store:
+                  help: Append `--network-peer-store` to the command.
+                  long: peer-store
+  - l2:
+      about: Security level 2 commands.
+  - backup:
+      about: Backup files.
+      args:
+        - logs-around:
+            help: |
+              Backup 20 minutes logs around the datetime which is in RFC3339 format.
+              For example, "2014-11-28T21:00:09+09:00".
+            long: logs-around
+            required: true
+            takes_value: true
+        - peer-store:
+            help: Backup with the peer store.
+            long: peer-store
+  - rpc:
+      about: Call JSON-RPC methods.
+      settings:
+        - SubcommandRequiredElseHelp
+      subcommands:
+        - get_peers:
+            about: Call JSON-RPC method get_peers.
+            args:
+              - stats:
+                  help: Print the statistical data.
+                  long: stats

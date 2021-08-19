@@ -11,7 +11,7 @@ defaults:
 env:
   PROJECT_NAME: ckb-dev
   CARGO_TERM_COLOR: always
-  RUSTFLAGS: -F warnings
+  RUSTFLAGS: -D warnings
   RUST_BACKTRACE: full
   RUST_TOOLCHAIN: 1.54.0
 jobs:
@@ -130,7 +130,7 @@ jobs:
           raw_name="${PROJECT_NAME}-$(uname -o)-$(uname -m)-$(lsb_release -si)-$(lsb_release -sc)-${version}"
           fullname="$(echo "${raw_name}" | tr '[\\/ ]' '_' | tr '[:upper:]' '[:lower:]')"
           mkdir "${fullname}"
-          cp LICENSE target/release/ckb-dev "${fullname}"/
+          cp -r LICENSE target/release/ckbdev etc "${fullname}"/
           tar czvf "${fullname}.tar.gz" "${fullname}"
           echo "::set-output name=file_path::${fullname}.tar.gz"
       - uses: softprops/action-gh-release@v1

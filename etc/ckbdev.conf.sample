@@ -1,0 +1,8 @@
+[host]
+ip = 127.0.0.1
+name = Basion Name
+
+[ckb]
+service_name = ckb_service
+bin_path = /opt/bin/ckb
+root_dir = /opt/local/ckb
