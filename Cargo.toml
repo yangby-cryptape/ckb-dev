@@ -1,6 +1,6 @@
 [package]
 name = "ckb-dev"
-version = "0.0.1-alpha.0"
+version = "0.1.0"
 authors = ["Boyu Yang <yangby@cryptape.com>"]
 edition = "2018"
 description = "A simple tool for CKB DevOps."
@@ -9,7 +9,7 @@ repository = "https://github.com/yangby-cryptape/ckb-dev"
 keywords = ["ckb"]
 license = "MIT"
 readme = "README.md"
-include = ["Cargo.lock", "src/**/*.rs", "README.md", "LICENSE"]
+include = ["Cargo.lock", "src/**/*.rs", "src/*.yaml", "README.md", "LICENSE"]
 
 [[bin]]
 name = "ckbdev"
