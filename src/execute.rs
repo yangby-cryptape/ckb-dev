@@ -98,7 +98,7 @@ impl CanExecute for BackupArgs {
         })?;
         let tgz_path = {
             let timestamp = Utc::now().format("%Y%m%d-%H%M%S");
-            let target_name = format!("{}-{}.tar.gz", cfg.normal.host.ip, timestamp);
+            let target_name = format!("{}-{}.tar.gz", cfg.normal.host.name, timestamp);
             tmp_dir.path().join(target_name)
         };
         let mut command = Command::new("tar");

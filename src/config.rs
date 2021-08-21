@@ -26,9 +26,9 @@ pub(crate) struct SecretConfig {
 }
 
 pub(crate) struct HostSection {
-    pub(crate) ip: IpAddr,
     #[allow(dead_code)]
-    pub(crate) name: String, // TODO
+    pub(crate) ip: IpAddr,
+    pub(crate) name: String,
 }
 
 pub(crate) struct CkbSection {
